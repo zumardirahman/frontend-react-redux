@@ -1,4 +1,6 @@
 import React from 'react'
+
+//render slide partial komponen to layout
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 
@@ -7,7 +9,7 @@ const layout = ({children}) => {
   return (
     <React.Fragment>
         <Navbar/>
-        <div className="columns mt-6">
+        <div className="columns mt-6" style={{minHeight: "100vh"}}>
             <div className="column is-2">
                 <Sidebar/>
             </div>
