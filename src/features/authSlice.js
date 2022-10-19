@@ -42,7 +42,7 @@ export const GetMe = createAsyncThunk("user/GetMe", async(_, thunkAPI)=>{
 
 //pada logout tidak perlu menambahkan extra reducer
 export const LogOut = createAsyncThunk("user/LogOut", async(_, thunkAPI)=>{
-          await axios.get('http://localhost:5000/logout')
+          await axios.delete('http://localhost:5000/logout')
    
 })
 

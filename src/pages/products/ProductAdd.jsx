@@ -1,13 +1,15 @@
 import React from 'react'
 import Layout from '../Layout'
-import ProductAdd from '../../components/products/ProductAdd'
+import UserAdd from '../../components/users/UserAdd'
+import UserEdit from '../../components/users/UserEdit'
 
-const RenderProductAdd = () => {
+const AddUser = () => {
   return (
    <Layout>
-    <ProductAdd/>
+    <UserAdd/>
+    <UserEdit/>
    </Layout>
   )
 }
 
-export default RenderProductAdd
+export default AddUser

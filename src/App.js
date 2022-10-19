@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} /> {/* pada elemen adalah componen yang aka di render */}
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
 
           <Route path="/users" element={<RenderUserList />} />
           <Route path="/users/add" element={<RenderUserAdd />} />
