@@ -7,7 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { GetMe } from "../features/authSlice";
 
+
 const Dashboard = () => {
+
+  //proteksi page
   const dispatch = useDispatch();
   const navigate = useNavigate();
   //ambil error dari state
@@ -24,6 +27,8 @@ const Dashboard = () => {
       navigate("/")
     }
   }, [isError, navigate]);
+//proteksi page
+
 
   return (
     <Layout>
