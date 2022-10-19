@@ -5,6 +5,11 @@ import { store } from './app/store';
 import App from './App';
 import "bulma/css/bulma.css"
 
+import axios from "axios"
+
+//jika tidak melakukan ini maka akan dilakukan manual disetiap request
+axios.defaults.withCredentials = true
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 
