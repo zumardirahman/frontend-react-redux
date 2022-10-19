@@ -1,14 +1,35 @@
-import React from 'react'
-import Layout from './Layout'
-import Welcome from '../components/Welcome' //render komponen welcome to dashboard
+import React, { useEffect } from "react";
+import Layout from "./Layout";
+import Welcome from "../components/Welcome"; //render komponen welcome to dashboard
 
-//prtoke
+//prteksi dashboard
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { GetMe } from "../features/authSlice";
+
 const Dashboard = () => {
-  return (
-   <Layout>
-    <Welcome/>
-   </Layout>
-  )
-}
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  //ambil error dari state
+  const { isError } = useSelector((state) => state.auth);
 
-export default Dashboard
+  //dsipatch funsi getme saat komponen mounted ke dom
+  useEffect(() => {
+    dispatch(GetMe());
+  }, [dispatch]);
+
+  //2 useeffect agar didispat dulu baru validasi
+  useEffect(() => {
+    if(isError){
+      navigate("/")
+    }
+  }, [isError, navigate]);
+
+  return (
+    <Layout>
+      <Welcome />
+    </Layout>
+  );
+};
+
+export default Dashboard;
